@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>History</title>
+    <link rel="stylesheet" href="materialize.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="font-awesome/css/all.min.css">
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav class="teal">
+           <div class="container">
+             <div class="nav-wrapper"> 
+               <a href="#" class="brand-logo">Todo App</a>
+               <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                <i class="fas fa-bars"></i>
+                </a>
+               <ul class="right hide-on-med-and-down">
+                 <li>
+                   <a href="index.html">Create Todo</a>
+                 </li>
+                 <li>
+                  <a href="all todos.html">All Todo</a>
+                </li>
+                <li>
+                  <a href="my day.html">My Day</a>
+                </li>
+                <li>
+                  <a href="history.html">History</a>
+                </li>
+               </ul>
+             </div>
+           </div>
+        </nav>
+      </div>
+      <ul class="sidenav" id="mobile-nav">
+        <li>
+          <a href="index.html">Create Todo</a>
+        </li>
+        <li>
+         <a href="all todos.html">All Todo</a>
+       </li>
+       <li>
+         <a href="my day.html">My Day</a>
+       </li>
+       <li>
+         <a href="history.html">History</a>
+       </li>
+      </ul>
+
+      <div id="hide">
+          <div class=" container">
+         <h2 class="center ">Completed Tasks</h2>
+         <ul class="collection" id="ul-2"></ul>
+         <div id="placeholder" class="cls1"></div>   
+         </div>
+            
+        <center>
+         <button class="btn-large waves-effect waves-dark  cls4" onclick="clearall();"  >Clear History</button>
+            </center>
+    <script src="jquery1.js"></script>
+    <script src="materialize.js"></script>
+    <!-- <script src="jscript.js"> </script> -->
+   <script>
+ var o,z;
+ 
+ function history() {
+  var done =JSON.parse(localStorage.getItem('comp')) 
+   for( z=0;z<done.length;z++){
+  //document.getElementById('ul-2').innerHTML='';
+   var targ=document.getElementById('ul-2'); 
+   var Li = document.createElement('li');
+   Li.setAttribute("class","collection-item red lighten-2 cls8");
+   Li.innerText=done[z].title;
+   var span=document.createElement('span');
+   span.setAttribute("class","secondary-content cls9");
+   span.innerHTML="<i class='fas fa-trash black-text' title='Delete' onclick='remov(o)' ></i>"
+   Li.appendChild(span);   
+  targ.appendChild(Li);     
+}
+ }
+window.onload=history();placeholder();
+function remov(k){
+  
+ window.location.reload();
+  var done =JSON.parse(localStorage.getItem('comp'));
+   (done.splice(k,1));
+  //var putt =JSON.stringify(objects);
+      localStorage.setItem('comp', JSON.stringify(done)); 
+  //settodos();
+   //placeholder();
+}
+function placeholder(){
+    if( document.getElementById('ul-2').hasChildNodes()===false){
+      document.getElementById('placeholder').innerHTML="<p>The Completed Tasks will Appear Here.</p>"    
+    }  
+  }
+ 
+   function clearall(){
+    //var done =JSON.parse(localStorage.getItem('comp'));
+  var  donen=[];
+    localStorage.setItem('comp', JSON.stringify(donen));
+   window.location.reload();
+   }
+
+
+
+
+
+
+
+
+</script>
+<script>
+
+    const sideNav=document.querySelector('.sidenav');
+    M.Sidenav.init(sideNav,{});
+    $('.datepicker').datepicker({});
+    </script>
+</body>
+
+</html>

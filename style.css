@@ -1,0 +1,98 @@
+body {
+    min-width: 350px;
+}
+li{
+    height: 50px;
+    font-size: 30px !important;
+}
+i:hover{
+    color: red !important;
+}
+i {
+    margin:0 10px !important;
+    font-size: 30px !important;
+}
+.cls1{
+    font-size: 20px;
+    text-align: center ;
+}
+.hide {
+    display: none !important;
+}
+
+.cls2{
+    width: 50% ;
+    height: 50px;
+    border: 2px solid black;    
+}
+.marg {
+    margin-right: 50px !important;
+}
+
+  .cls3 {
+      font-style: arial;
+  }
+
+  .cls4{
+      margin-top: 250px !important;
+  }
+ 
+  @media screen and (max-width:640px){
+    .cls6{
+       padding: 10px !important;
+      height: 100px;
+    }
+  }
+  @media screen and (max-width:1070px){
+    .cls6{
+       
+      height: 70px;
+    }
+    .cls7 {
+        padding: 10px ;
+        line-height: 30px;
+        font-size: 30px ;
+    }
+  }
+  @media screen and (max-width:959px){
+    .cls6{
+       
+      height: 80px;
+    }
+    .cls7 {
+        padding: 10px ;
+        line-height: 30px;
+        font-size: 30px ;
+    }
+  }
+
+  @media screen and (max-width:800px){
+    .cls6{
+       
+      height: 100px;
+    }
+    .cls7 {
+        padding: 5px ;
+        line-height: 30px;
+        font-size: 25px;
+    }
+  }
+
+  @media screen and (max-width:750px){
+    .cls8{
+       height: 80px;
+    }
+    .cls9{
+        margin-top: 20px;
+    }
+  }
+  @media screen and (max-width:550px){
+    .cls8{
+        font-size: 25px !important;
+       height: 100px;
+    }
+    .cls9{
+        margin-top: 19px;
+        
+    }
+  }
